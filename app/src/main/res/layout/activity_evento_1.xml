@@ -10,9 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.fapehe.sos_kymera.evento_1"
-    android:background="@mipmap/rock2017"
-
-    >
+    android:background="@mipmap/rock2017">
 
 <ScrollView
     android:layout_width="wrap_content"
@@ -41,23 +39,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="20dp">
+
             <TextView
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:text="Rock al parque es un festival internacional de rock que se lleva a cabo en la ciudad de Bogotá, Colombia, desde el año 1994. Es el festival gratuito y al aire libre más grande de Hispanoamérica e Iberoamérica y el tercero más grande del mundo"/>
+                android:text="Rock al parque es un festival internacional de rock que se lleva a cabo en la ciudad de Bogotá, Colombia, desde el año 1994. Es el festival gratuito y al aire libre más grande de Hispanoamérica e Iberoamérica y el tercero más grande del mundo"
+                android:id="@+id/textView2" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="20dp">
+            android:padding="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="#FFFFFF"
-                android:text="INFORMACION DEL EVENTO\n
+                android:text="FECHA: 1-2-3 DE JULIO DEL 2017\n
+                INFORMACION DEL EVENTO\n
 -No se permite el ingreso de menores de 14 años.\n
 -Se recomienda asistir al lugar del evento con lo necesario para disfrutar del mismo (Evite llevar maletas demasiado grandes, correas, elementos de maquillaje u otros).\n
 -Debe ir bien alimentado (a), llevar dinero (no se permite el ingreso de alimentos ni bebidas).\n
@@ -69,6 +70,19 @@
 -No se permite el ingreso y consumo de licor.\n
 -No se permite el ingreso de personas en estado de embriaguez o  bajo el efecto de  dogras.\n
 -Se recomienda el no ingreso de mujeres en visible estado de embarazo.\n"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:padding="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@mipmap/maps"
+                android:scaleType="centerCrop"
+                />
+
         </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
