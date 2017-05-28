@@ -25,7 +25,8 @@
         <activity
             android:name=".Iniciar_sesion"
             android:label="@string/title_activity_iniciar_sesion" />
-        <activity android:name=".CreadorDB"></activity>
+        <activity android:name=".CreadorDB" />
+        <activity android:name=".evento_1"></activity>
     </application>
 
 </manifest>

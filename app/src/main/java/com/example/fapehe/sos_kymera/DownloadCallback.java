@@ -39,4 +39,3 @@ public interface DownloadCallback<T> {
      */
     void finishDownloading();
 }
-}
