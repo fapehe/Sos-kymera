@@ -73,14 +73,26 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CALCULAR RUTA"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:padding="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:src="@mipmap/maps"
                 android:scaleType="centerCrop"
+                android:id="@+id/maps"
                 />
 
         </android.support.design.widget.TextInputLayout>
