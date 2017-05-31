@@ -1,7 +1,10 @@
 package com.example.fapehe.sos_kymera;
 
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -12,6 +15,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class Mapa extends FragmentActivity implements OnMapReadyCallback {
 
+    private static final int LOCATION_REQUEST_CODE = 1;
     private GoogleMap mMap;
 
     @Override
@@ -39,8 +43,10 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng Lugar = new LatLng(4.658056, -74.093889);
+        mMap.addMarker(new MarkerOptions().position(Lugar).title("parque Simon Bolivar"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(Lugar));
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setMyLocationButtonEnabled(true);
     }
 }
