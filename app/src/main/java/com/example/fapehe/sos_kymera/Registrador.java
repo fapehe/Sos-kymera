@@ -17,26 +17,27 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by fabian on 17/05/2017.
  */
 
-public class Registrador extends SQLiteOpenHelper implements DownloadCallback{
+public abstract class Registrador extends SQLiteOpenHelper implements DownloadCallback{
+
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "Usuarios.db";
+
+    public Registrador(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
 
     @Override
-    public void updateFromDownload(Object result) {
+    public void onCreate(SQLiteDatabase db) {
+
+        db.execSQL(DatosTabla.Crear_Tabla);
 
     }
 
     @Override
-    public NetworkInfo getActiveNetworkInfo() {
-        return null;
-    }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-    @Override
-    public void onProgressUpdate(int progressCode, int percentComplete) {
-
-    }
-
-    @Override
-    public void finishDownloading() {
-
+        db.execSQL(DatosTabla.SQL_DELETE_ENTRIES);
+        onCreate(db);
     }
 
     public static class DatosTabla implements BaseColumns {
@@ -60,29 +61,5 @@ public class Registrador extends SQLiteOpenHelper implements DownloadCallback{
             private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + DatosTabla.NOMBRE_TABLA;
     }
-
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Usuarios.db";
-
-    public Registrador(Context context) {
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-
-        db.execSQL(DatosTabla.Crear_Tabla);
-
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
-        db.execSQL(DatosTabla.SQL_DELETE_ENTRIES);
-        onCreate(db);
-    }
-
-
-
 
 }

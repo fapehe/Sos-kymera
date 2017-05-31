@@ -3,6 +3,7 @@ package com.example.fapehe.sos_kymera;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,27 @@ public class CreadorDB extends AppCompatActivity {
         Email=(EditText)findViewById(R.id.email_registro);
         Password=(EditText)findViewById(R.id.password_registro);
 
-        final Registrador registroDB = new Registrador(getApplicationContext());
+        final Registrador registroDB = new Registrador(getApplicationContext()) {
+            @Override
+            public void updateFromDownload(Object result) {
+
+            }
+
+            @Override
+            public NetworkInfo getActiveNetworkInfo() {
+                return null;
+            }
+
+            @Override
+            public void onProgressUpdate(int progressCode, int percentComplete) {
+
+            }
+
+            @Override
+            public void finishDownloading() {
+
+            }
+        };
 
         B_registro.setOnClickListener(new View.OnClickListener() {
             @Override

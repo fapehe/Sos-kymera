@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -108,7 +109,27 @@ public class Iniciar_sesion extends CreadorDB implements LoaderCallbacks<Cursor>
                 startActivity(intent);
             }
         });
-        final Registrador registroDB = new Registrador(getApplicationContext());
+        final Registrador registroDB = new Registrador(getApplicationContext()) {
+            @Override
+            public void updateFromDownload(Object result) {
+
+            }
+
+            @Override
+            public NetworkInfo getActiveNetworkInfo() {
+                return null;
+            }
+
+            @Override
+            public void onProgressUpdate(int progressCode, int percentComplete) {
+
+            }
+
+            @Override
+            public void finishDownloading() {
+
+            }
+        };
         B_inicio.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,8 +179,7 @@ public class Iniciar_sesion extends CreadorDB implements LoaderCallbacks<Cursor>
      * Callback received when a permissions request has been completed.
      */
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,@NonNull int[] grantResults) {
         if (requestCode == REQUEST_READ_CONTACTS) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 populateAutoComplete();
