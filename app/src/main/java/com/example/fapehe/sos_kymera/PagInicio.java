@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class PagInicio extends AppCompatActivity {
+public class PagInicio extends AppCompatActivity     {
 
     Button iniciar;
     ImageButton ir_evento;

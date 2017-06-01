@@ -1,33 +1,28 @@
 package com.example.fapehe.sos_kymera;
 
 
-import android.*;
-import android.app.FragmentTransaction;
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.Toast;
-import android.Manifest;
-import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Mapa extends FragmentActivity implements OnMapReadyCallback, OnMyLocationButtonClickListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
@@ -98,9 +93,8 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, OnMyLo
         longitud = location.getLongitude();
     }
     private void CalcRute(){
-
-        line = mMap.addPolyline(new PolylineOptions().add(new LatLng(latitude,longitud),Lugar).width(5).color(Color.RED))   ;
-
+        //line = mMap.addPolyline(new PolylineOptions().geodesic(false).add(new LatLng(latitude,longitud ),Lugar).width(5).color(Color.RED));//
+        
     }
     private void enableMyLocation() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
