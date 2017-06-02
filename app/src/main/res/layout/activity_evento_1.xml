@@ -32,6 +32,7 @@
                 android:text="ROCK AL PARQUE 2017"
                 android:textColor="#FFFFFF"
                 android:textSize="25dp"
+                android:id="@+id/title"
                 />
         </android.support.design.widget.TextInputLayout>
 
@@ -46,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
                 android:text="Rock al parque es un festival internacional de rock que se lleva a cabo en la ciudad de Bogotá, Colombia, desde el año 1994. Es el festival gratuito y al aire libre más grande de Hispanoamérica e Iberoamérica y el tercero más grande del mundo"
-                android:id="@+id/textView2" />
+                android:id="@+id/introduccion" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -57,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="#FFFFFF"
+                android:id="@+id/information"
                 android:text="FECHA: 1-2-3 DE JULIO DEL 2017\n
                 INFORMACION DEL EVENTO\n
 -No se permite el ingreso de menores de 14 años.\n
